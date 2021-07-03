@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
@@ -19,9 +20,10 @@ import org.springframework.web.client.RestTemplate;
  * 从Spring Cloud Edgware开始，@EnableDiscoveryClient 或@EnableEurekaClient 可省略。只需加上相关依赖，并进行相应配置，即可将微服务注册到服务发现组件上。
  **/
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients// 开启feign
 @EnableEurekaClient
 @EnableDiscoveryClient
+@EnableHystrix //开启断路器功能
 public class ConsumerApplication {
 
     public static void main(String[] args) {

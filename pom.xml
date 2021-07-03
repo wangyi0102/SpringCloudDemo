@@ -20,6 +20,8 @@
         <module>producer</module>
         <module>consumer</module>
         <module>producer1</module>
+        <module>hystrixDashboard</module>
+        <module>zuul</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
